@@ -1,0 +1,11 @@
+{:deps {io.github.borkdude/quickblog
+        #_"You use the newest SHA here:"
+        {:git/sha "792f952be8fe0f3326b293dde3251f6a09deaf0c"}}
+ :tasks
+ {:requires ([quickblog.cli :as cli])
+  :init (def opts {:blog-title "Tim Brown’s Blog"
+                   :blog-description "A simple blog. About simple things."
+                   :blog-root "https://tim-brown.github.io/"})
+  quickblog {:doc "Start blogging quickly! Run `bb quickblog help` for details."
+             :task (cli/dispatch opts)
+             }}}

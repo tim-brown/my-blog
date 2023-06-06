@@ -1,0 +1,39 @@
+<h1>
+  {% if post-link %}
+  <a href="{{post-link}}">
+  {% endif %}
+  {{title}}
+  {% if post-link %}
+  </a>
+  {% endif %}
+</h1>
+{{body | safe}}
+<p>Discuss this post <a href="{{discuss}}">here</a>.</p>
+<p><i>Published: {{date}}</i></p>
+{% if tags %}
+<p>
+  <i>
+  Tagged:
+  {% for tag in tags %}
+  <span class="tag">
+    <a href="tags/{{tag|escape-tag}}.html">{{tag}}</a>
+  </span>
+  {% endfor %}
+  </i>
+</p>
+
+    <div id="disqus_thread"></div>
+    <script>
+	   var disqus_config = function () {
+			       this.page.url = sharingUrl; 
+			       this.page.identifier = "{{file}}";
+	   };
+	    (function() { // DON'T EDIT BELOW THIS LINE
+				var d = document, s = d.createElement('script');
+				s.src = 'https://tim-brown-github-pages.disqus.com/embed.js';
+				s.setAttribute('data-timestamp', +new Date());
+				(d.head || d.body).appendChild(s);
+			})();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endif %}
