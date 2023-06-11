@@ -1,11 +1,13 @@
 Title: Publishing this blog
 Date: 2023-06-11
-Tags: blog, quickblog, github-pages
+Tags: blog, github-pages, quickblog
 
 In my previous post, I got quickblog working! Woo! But I still need somewhere
-to publish it... so you wonderful people can read it!
+to publish it… so you wonderful people can read it!
 
 I’ve chosen to use [github pages](https://pages.github.com/).
+
+<!-- end-of-preview --> 
 
 I’ve been giving some thought to how to structure my code; and I have decided
 to try:
@@ -70,19 +72,52 @@ git add .
 git commit -am 'initial blog commit'
 git push
 ```
-Browse... [https://tim-brown.github.io](https://tim-brown.github.io)
+Browse… [https://tim-brown.github.io](https://tim-brown.github.io)
 
 Woo hoo! It’s alive!
 
-## And finally a bit of tidyup...
+## And finally a bit of tidyup…
 
 ```bash
 cd …/my-blog
-git add .gitignore bb.edn posts/2023-06-11-publishing.md
+# changes we made to :out-dir
+git add bb.edn
+# the new post
+git add posts/2023-06-11-publishing.md
+# the new submodule commit
+git add tim-brown.github.io
 ```
 
-# TODOs
-- backlink to previous article (and figure out how to make that work both
-  locally and on production site)
+(This is a bit misleading, because as I continue to write this entry &mdash; after publication, I continue to get):
+```bash
+git status
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+	modified:   tim-brown.github.io (modified content)
+```
+
+`(modified content)` is because I have a `bb quicklog watch` tracking changes in my post,
+and building the site into the submodule. This is great… it means I have to continue to
+commit and push the submodule until the published site matches the source.
+
+So I won’t bore you with “going through the cycle until it’s all settled”.
 
 # Call to Action
+
+I’m going to put an explicit CTA at the end of each of my blog posts.
+Not so you buy something (not that I have anything to sell &mdash; yet),
+but because there is no point me writing here if you don’t take anything
+from it.
+
+So today… I’m asking you to feed back any bugs you find on this site.
+Let me know on the Disqus below (and prove it works).
+
+# For the future (and to-do list)
+- backlink to previous article (and figure out how to make that work both
+  locally and on production site)
+- this looks eminently scriptable; for now I’ll probably bump along manually
+  building the site (the publish workflow is, after all, an “end of day” activity)…
+  I want to get on with some proper content!

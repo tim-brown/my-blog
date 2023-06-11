@@ -1,13 +1,17 @@
 Title: My first blog entry for a while
 Date: 2023-06-06
-Tags: clojure, blogging
+Tags: blog, clojure, quickblog
 
 So... I’ve decided to get back on the blogging horse, but I’ve been dragging my feet a bit figuring out what blogging platform to use.
 
 I’ve had previous experience with gitlab pages... and a long time ago [racket frog](https://docs.racket-lang.org/frog/index.html). Which is awesome, but as far as I can tell, no longer supported by the author. And my general trajectory is Clojure-wards.
 
 I need a blogging tool, implemented in Clojure, that will work with gitlab pages.  
-A quick google search of “babashka blog framework” threw up [quickblog](https://github.com/borkdude/quickblog). Deep breath, what’s that going to look like?
+A quick google search of “babashka blog framework” threw up [quickblog](https://github.com/borkdude/quickblog).
+
+Deep breath... what’s that going to look like?
+
+<!-- end-of-preview --> 
 
 The readme looks really simple (disclosure, I already have babashka and Clojure installed on my local machine, and I’m pretty happy with the idea of configuring my environment with a `bb.edn` (or `deps.clj`)). So:
 
