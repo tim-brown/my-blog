@@ -50,7 +50,9 @@
         <div class="site-nav">
           <a class="page-link" href="{{relative-path | safe}}archive.html">Archive</a>
           <a class="page-link" href="{{relative-path | safe}}tags/index.html">Tags</a>
+	  {% if discuss %}
           <a class="page-link" href="{{discuss-link}}">Discuss</a>
+	  {% endif %}
 	  <a class="page-link" href="{{relative-path | safe}}atom.xml">
             Feed
           </a>
@@ -62,6 +64,11 @@
 	  {% if about-link %}
 	  <a class="page-link" href="{{about-link}}">About</a>
 	  {% endif %}
+	  <div id="buy-me-a-coffee">
+		  <a href="https://www.buymeacoffee.com/timbrown">
+			  <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=timbrown&button_colour=eeeeee&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=de9c6e" />
+		  </a>
+	  </div>
         </div>
         <div>
           <h1 class="site-title">
@@ -75,10 +82,6 @@
     <div class="wrapper">
 
       {{body | safe }}
-
-      <a href="https://www.buymeacoffee.com/timbrown">
-          <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=timbrown&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" />
-      </a>
 
       {% if not skip-archive %}
       <div style="margin-bottom: 20px; float: right;">
